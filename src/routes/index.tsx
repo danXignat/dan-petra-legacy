@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroImage from "@/assets/hero.jpg";
 import { Nav } from "@/components/wedding/Nav";
 import { Monogram } from "@/components/wedding/Monogram";
-import { Ornament, Divider } from "@/components/wedding/Ornament";
+import { Ornament } from "@/components/wedding/Ornament";
 import { VineBotanical, BotanicalGarland } from "@/components/wedding/Botanical";
 import {
   PageSideVines,
