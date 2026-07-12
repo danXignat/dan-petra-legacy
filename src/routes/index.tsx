@@ -2,8 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroImage from "@/assets/hero.jpg";
 import { Nav } from "@/components/wedding/Nav";
 import { Monogram } from "@/components/wedding/Monogram";
-import { Ornament, Divider } from "@/components/wedding/Ornament";
+import { Ornament } from "@/components/wedding/Ornament";
 import { VineBotanical, BotanicalGarland } from "@/components/wedding/Botanical";
+import {
+  PageSideVines,
+  CornerFlourish,
+  ArchDivider,
+} from "@/components/wedding/SideVines";
+import { useRevealOnScroll } from "@/hooks/use-reveal";
 import { EventCard } from "@/components/wedding/EventCard";
 import { RsvpForm } from "@/components/wedding/RsvpForm";
 import { Countdown } from "@/components/wedding/Countdown";
@@ -34,34 +40,58 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 function Invitation() {
   const c = weddingConfig;
+  useRevealOnScroll();
 
   return (
     <div className="min-h-screen">
+      <PageSideVines />
       <Nav />
-      <main id="home">
+      <main id="home" className="relative z-10">
         {/* ============ HERO ============ */}
         <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-6 pt-28 pb-16">
+          {/* Corner flourishes — manuscript-style */}
+          <CornerFlourish
+            corner="tl"
+            size={110}
+            className="pointer-events-none absolute left-4 top-24 text-[color:var(--color-gold)]/70 sm:left-6"
+          />
+          <CornerFlourish
+            corner="tr"
+            size={110}
+            className="pointer-events-none absolute right-4 top-24 text-[color:var(--color-gold)]/70 sm:right-6"
+          />
+          <CornerFlourish
+            corner="bl"
+            size={110}
+            className="pointer-events-none absolute bottom-6 left-4 text-[color:var(--color-gold)]/60 sm:left-6"
+          />
+          <CornerFlourish
+            corner="br"
+            size={110}
+            className="pointer-events-none absolute bottom-6 right-4 text-[color:var(--color-gold)]/60 sm:right-6"
+          />
+
           {/* Corner botanicals: whimsical vines with grapes & pomegranates */}
           <VineBotanical
-            className="pointer-events-none absolute -left-6 top-24 text-[color:var(--color-gold)]/50 hidden sm:block"
-            width={180}
-            height={280}
+            className="pointer-events-none absolute -left-6 top-40 text-[color:var(--color-gold)]/45 hidden sm:block"
+            width={170}
+            height={260}
           />
           <VineBotanical
-            className="pointer-events-none absolute -right-6 top-24 text-[color:var(--color-gold)]/50 hidden sm:block"
-            width={180}
-            height={280}
+            className="pointer-events-none absolute -right-6 top-40 text-[color:var(--color-gold)]/45 hidden sm:block"
+            width={170}
+            height={260}
             flip
           />
           <VineBotanical
-            className="pointer-events-none absolute -left-8 bottom-0 text-[color:var(--color-burgundy)]/30 hidden md:block"
-            width={160}
-            height={240}
+            className="pointer-events-none absolute -left-8 bottom-16 text-[color:var(--color-burgundy)]/30 hidden md:block"
+            width={150}
+            height={220}
           />
           <VineBotanical
-            className="pointer-events-none absolute -right-8 bottom-0 text-[color:var(--color-burgundy)]/30 hidden md:block"
-            width={160}
-            height={240}
+            className="pointer-events-none absolute -right-8 bottom-16 text-[color:var(--color-burgundy)]/30 hidden md:block"
+            width={150}
+            height={220}
             flip
           />
 
@@ -123,7 +153,7 @@ function Invitation() {
           </div>
         </section>
 
-        <Divider />
+        <ArchDivider className="reveal-on-scroll" />
 
         {/* ============ WELCOME / OUR WEDDING ============ */}
         <section id="our-wedding" className="px-6 py-20 sm:py-28">
@@ -224,7 +254,7 @@ function Invitation() {
           </div>
         </section>
 
-        <Divider />
+        <ArchDivider className="reveal-on-scroll" />
 
         {/* ============ RSVP ============ */}
         <section id="rsvp" className="relative overflow-hidden px-6 py-20 sm:py-28">
