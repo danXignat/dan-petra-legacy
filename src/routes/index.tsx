@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImage from "@/assets/hero.jpg";
 import { Nav } from "@/components/wedding/Nav";
 import { Monogram } from "@/components/wedding/Monogram";
 import { Ornament, Divider } from "@/components/wedding/Ornament";
@@ -37,18 +36,6 @@ function Invitation() {
       <main id="home">
         {/* ============ HERO ============ */}
         <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-6 pt-28 pb-16">
-          {/* Arched frame with hero image */}
-          <div className="pointer-events-none absolute inset-x-0 top-24 mx-auto hidden md:block">
-            <div className="relative mx-auto h-[520px] w-[380px] opacity-25">
-              <div
-                className="absolute inset-0 rounded-t-[190px] bg-cover bg-center"
-                style={{ backgroundImage: `url(${heroImage})` }}
-              />
-              <div className="absolute inset-0 rounded-t-[190px] border border-[color:var(--color-gold)]/60" />
-              <div className="absolute inset-1 rounded-t-[186px] border border-[color:var(--color-gold)]/30" />
-            </div>
-          </div>
-
           <div className="relative z-10 mx-auto max-w-3xl text-center reveal">
             <div className="flex justify-center text-[color:var(--color-gold)]">
               <Monogram size={110} />
@@ -93,6 +80,16 @@ function Invitation() {
 
             <div className="mt-16">
               <Countdown targetIso={c.date.iso} />
+            </div>
+
+            <div className="mt-14 mx-auto max-w-xl">
+              <p className="italic text-base sm:text-lg leading-[1.85] text-[color:var(--color-charcoal)]/85">
+                „Mai bine doi decât unul, căci au o răsplată bună pentru osteneala
+                lor... Și funia împletită în trei nu se rupe ușor."
+              </p>
+              <p className="mt-3 text-[11px] uppercase tracking-[0.38em] text-[color:var(--color-gold)]">
+                Eclesiastul 4:9–12
+              </p>
             </div>
           </div>
         </section>
