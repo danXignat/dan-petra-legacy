@@ -227,7 +227,18 @@ function Invitation() {
         <Divider />
 
         {/* ============ RSVP ============ */}
-        <section id="rsvp" className="px-6 py-20 sm:py-28">
+        <section id="rsvp" className="relative overflow-hidden px-6 py-20 sm:py-28">
+          <VineBotanical
+            className="pointer-events-none absolute -left-6 top-10 text-[color:var(--color-burgundy)]/25 hidden md:block"
+            width={150}
+            height={240}
+          />
+          <VineBotanical
+            className="pointer-events-none absolute -right-6 top-10 text-[color:var(--color-burgundy)]/25 hidden md:block"
+            width={150}
+            height={240}
+            flip
+          />
           <div className="mx-auto max-w-2xl">
             <div className="text-center">
               <SectionLabel>Répondez s'il vous plaît</SectionLabel>
