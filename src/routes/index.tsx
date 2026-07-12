@@ -153,7 +153,7 @@ function Invitation() {
           </div>
         </section>
 
-        <Divider />
+        <ArchDivider className="reveal-on-scroll" />
 
         {/* ============ WELCOME / OUR WEDDING ============ */}
         <section id="our-wedding" className="px-6 py-20 sm:py-28">
@@ -254,7 +254,7 @@ function Invitation() {
           </div>
         </section>
 
-        <Divider />
+        <ArchDivider className="reveal-on-scroll" />
 
         {/* ============ RSVP ============ */}
         <section id="rsvp" className="relative overflow-hidden px-6 py-20 sm:py-28">
