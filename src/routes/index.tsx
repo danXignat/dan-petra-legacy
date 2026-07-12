@@ -3,6 +3,7 @@ import heroImage from "@/assets/hero.jpg";
 import { Nav } from "@/components/wedding/Nav";
 import { Monogram } from "@/components/wedding/Monogram";
 import { Ornament, Divider } from "@/components/wedding/Ornament";
+import { VineBotanical, BotanicalGarland } from "@/components/wedding/Botanical";
 import { EventCard } from "@/components/wedding/EventCard";
 import { RsvpForm } from "@/components/wedding/RsvpForm";
 import { Countdown } from "@/components/wedding/Countdown";
@@ -40,6 +41,30 @@ function Invitation() {
       <main id="home">
         {/* ============ HERO ============ */}
         <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-6 pt-28 pb-16">
+          {/* Corner botanicals: whimsical vines with grapes & pomegranates */}
+          <VineBotanical
+            className="pointer-events-none absolute -left-6 top-24 text-[color:var(--color-gold)]/50 hidden sm:block"
+            width={180}
+            height={280}
+          />
+          <VineBotanical
+            className="pointer-events-none absolute -right-6 top-24 text-[color:var(--color-gold)]/50 hidden sm:block"
+            width={180}
+            height={280}
+            flip
+          />
+          <VineBotanical
+            className="pointer-events-none absolute -left-8 bottom-0 text-[color:var(--color-burgundy)]/30 hidden md:block"
+            width={160}
+            height={240}
+          />
+          <VineBotanical
+            className="pointer-events-none absolute -right-8 bottom-0 text-[color:var(--color-burgundy)]/30 hidden md:block"
+            width={160}
+            height={240}
+            flip
+          />
+
           {/* Arched frame with hero image */}
           <div className="pointer-events-none absolute inset-x-0 top-24 mx-auto hidden md:block">
             <div className="relative mx-auto h-[520px] w-[380px] opacity-25">
@@ -106,7 +131,7 @@ function Invitation() {
             <SectionLabel>Our Wedding</SectionLabel>
             <SectionHeading>{c.welcome.heading}</SectionHeading>
             <div className="mt-8 flex justify-center text-[color:var(--color-gold)]">
-              <Ornament width={180} />
+              <BotanicalGarland className="text-[color:var(--color-gold)]" width={420} />
             </div>
             <p className="drop-cap mx-auto mt-10 max-w-2xl text-left text-lg leading-[1.9] text-[color:var(--color-charcoal)]/90">
               {c.welcome.body}
@@ -202,7 +227,18 @@ function Invitation() {
         <Divider />
 
         {/* ============ RSVP ============ */}
-        <section id="rsvp" className="px-6 py-20 sm:py-28">
+        <section id="rsvp" className="relative overflow-hidden px-6 py-20 sm:py-28">
+          <VineBotanical
+            className="pointer-events-none absolute -left-6 top-10 text-[color:var(--color-burgundy)]/25 hidden md:block"
+            width={150}
+            height={240}
+          />
+          <VineBotanical
+            className="pointer-events-none absolute -right-6 top-10 text-[color:var(--color-burgundy)]/25 hidden md:block"
+            width={150}
+            height={240}
+            flip
+          />
           <div className="mx-auto max-w-2xl">
             <div className="text-center">
               <SectionLabel>Répondez s'il vous plaît</SectionLabel>
@@ -256,7 +292,7 @@ function Invitation() {
         <section className="px-6 py-24 sm:py-32 text-center">
           <div className="mx-auto max-w-2xl">
             <div className="flex justify-center text-[color:var(--color-gold)]">
-              <Ornament width={220} />
+              <BotanicalGarland className="text-[color:var(--color-gold)]" width={520} />
             </div>
             <p className="mt-10 font-display text-2xl sm:text-3xl text-[color:var(--color-forest)] leading-relaxed">
               {c.closing.line}
@@ -274,7 +310,7 @@ function Invitation() {
             </p>
 
             <div className="mt-10 flex justify-center text-[color:var(--color-gold)]">
-              <Ornament width={220} />
+              <BotanicalGarland className="text-[color:var(--color-gold)]" width={520} />
             </div>
           </div>
         </section>
