@@ -281,7 +281,7 @@ function Invitation() {
         <section className="px-6 py-24 sm:py-32 text-center">
           <div className="mx-auto max-w-2xl">
             <div className="flex justify-center text-[color:var(--color-gold)]">
-              <Ornament width={220} />
+              <BotanicalGarland className="text-[color:var(--color-gold)]" width={520} />
             </div>
             <p className="mt-10 font-display text-2xl sm:text-3xl text-[color:var(--color-forest)] leading-relaxed">
               {c.closing.line}
