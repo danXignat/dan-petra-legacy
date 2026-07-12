@@ -299,7 +299,7 @@ function Invitation() {
             </p>
 
             <div className="mt-10 flex justify-center text-[color:var(--color-gold)]">
-              <Ornament width={220} />
+              <BotanicalGarland className="text-[color:var(--color-gold)]" width={520} />
             </div>
           </div>
         </section>
