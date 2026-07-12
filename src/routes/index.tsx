@@ -131,6 +131,9 @@ function Invitation() {
             <SectionLabel>Our Wedding</SectionLabel>
             <SectionHeading>{c.welcome.heading}</SectionHeading>
             <div className="mt-8 flex justify-center text-[color:var(--color-gold)]">
+              <BotanicalGarland className="text-[color:var(--color-gold)]" width={420} />
+            </div>
+            <div className="sr-only">
               <Ornament width={180} />
             </div>
             <p className="drop-cap mx-auto mt-10 max-w-2xl text-left text-lg leading-[1.9] text-[color:var(--color-charcoal)]/90">
