@@ -3,6 +3,7 @@ import heroImage from "@/assets/hero.jpg";
 import { Nav } from "@/components/wedding/Nav";
 import { Monogram } from "@/components/wedding/Monogram";
 import { Ornament, Divider } from "@/components/wedding/Ornament";
+import { VineBotanical, BotanicalGarland } from "@/components/wedding/Botanical";
 import { EventCard } from "@/components/wedding/EventCard";
 import { RsvpForm } from "@/components/wedding/RsvpForm";
 import { Countdown } from "@/components/wedding/Countdown";
