@@ -6,10 +6,7 @@ import { Ornament, Divider } from "@/components/wedding/Ornament";
 import { EventCard } from "@/components/wedding/EventCard";
 import { RsvpForm } from "@/components/wedding/RsvpForm";
 import { Countdown } from "@/components/wedding/Countdown";
-import {
-  weddingConfig,
-  mapsDirectionsUrl,
-} from "@/lib/wedding-config";
+import { weddingConfig, mapsDirectionsUrl } from "@/lib/wedding-config";
 
 export const Route = createFileRoute("/")({
   component: Invitation,
@@ -25,7 +22,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl text-[color:var(--color-forest)]">
+    <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl text-[color:var(--color-olive)]">
       {children}
     </h2>
   );
@@ -59,10 +56,12 @@ function Invitation() {
 
             <SectionLabel>{c.hero.kicker}</SectionLabel>
 
-            <h1 className="mt-6 font-display text-5xl sm:text-6xl md:text-7xl leading-[1.05] text-[color:var(--color-forest)]">
-              <span className="italic font-serif text-[color:var(--color-burgundy)]">Dan</span>
+            <h1 className="mt-6 font-decorative text-5xl leading-[1.05] sm:text-6xl md:text-7xl text-[color:var(--color-olive)]">
+              <span className="text-[color:var(--color-burgundy)]">{c.couple.firstName}</span>
               <span className="mx-3 text-[color:var(--color-gold)]">&amp;</span>
-              <span className="italic font-serif text-[color:var(--color-burgundy)]">Petra</span>
+              <span className="text-[color:var(--color-burgundy)]">
+                {c.couple.partnerFirstName}
+              </span>
             </h1>
 
             <div className="mt-8 flex items-center justify-center gap-4 text-[color:var(--color-gold)]">
@@ -80,15 +79,15 @@ function Invitation() {
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
                 href="#rsvp"
-                className="inline-flex min-w-52 items-center justify-center rounded-sm border border-[color:var(--color-forest)] bg-[color:var(--color-forest)] px-8 py-3 text-[11px] uppercase tracking-[0.4em] text-[color:var(--color-ivory)] transition hover:bg-[color:var(--color-burgundy)] hover:border-[color:var(--color-burgundy)]"
+                className="inline-flex min-w-52 items-center justify-center rounded-sm border border-[color:var(--color-olive)] bg-[color:var(--color-olive)] px-8 py-3 text-[11px] uppercase tracking-[0.4em] text-[color:var(--color-ivory)] transition hover:bg-[color:var(--color-burgundy)] hover:border-[color:var(--color-burgundy)]"
               >
                 RSVP
               </a>
               <a
                 href="#schedule"
-                className="text-[11px] uppercase tracking-[0.32em] text-[color:var(--color-forest)] underline decoration-[color:var(--color-gold)] decoration-1 underline-offset-8 hover:text-[color:var(--color-burgundy)]"
+                className="text-[11px] uppercase tracking-[0.32em] text-[color:var(--color-olive)] underline decoration-[color:var(--color-gold)] decoration-1 underline-offset-8 hover:text-[color:var(--color-burgundy)]"
               >
-                View the Wedding Schedule
+                Vezi programul nunții
               </a>
             </div>
 
@@ -103,7 +102,7 @@ function Invitation() {
         {/* ============ WELCOME / OUR WEDDING ============ */}
         <section id="our-wedding" className="px-6 py-20 sm:py-28">
           <div className="mx-auto max-w-3xl text-center">
-            <SectionLabel>Our Wedding</SectionLabel>
+            <SectionLabel>Nunta noastră</SectionLabel>
             <SectionHeading>{c.welcome.heading}</SectionHeading>
             <div className="mt-8 flex justify-center text-[color:var(--color-gold)]">
               <Ornament width={180} />
@@ -118,8 +117,8 @@ function Invitation() {
         <section id="schedule" className="px-6 py-20 sm:py-28 bg-[color:var(--color-parchment)]/25">
           <div className="mx-auto max-w-6xl">
             <div className="text-center">
-              <SectionLabel>The Schedule</SectionLabel>
-              <SectionHeading>A Day to Remember</SectionHeading>
+              <SectionLabel>Programul</SectionLabel>
+              <SectionHeading>O zi de neuitat</SectionHeading>
               <div className="mt-6 flex justify-center text-[color:var(--color-gold)]">
                 <Ornament width={160} />
               </div>
@@ -135,14 +134,16 @@ function Invitation() {
         {/* ============ JOURNEY ============ */}
         <section className="px-6 py-20 sm:py-24">
           <div className="mx-auto max-w-4xl text-center">
-            <SectionLabel>The Route</SectionLabel>
+            <SectionLabel>Traseul</SectionLabel>
             <SectionHeading>{c.journey.heading}</SectionHeading>
 
             <div className="mt-14 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-4">
               <div className="text-center">
-                <div className="font-display text-lg text-[color:var(--color-burgundy)]">Cristian</div>
+                <div className="font-display text-lg text-[color:var(--color-burgundy)]">
+                  Cristian
+                </div>
                 <div className="text-xs uppercase tracking-[0.28em] text-[color:var(--color-gold)] mt-1">
-                  Ceremony
+                  Ceremonia
                 </div>
               </div>
 
@@ -166,9 +167,11 @@ function Invitation() {
               </svg>
 
               <div className="text-center">
-                <div className="font-display text-lg text-[color:var(--color-burgundy)]">Brașov</div>
+                <div className="font-display text-lg text-[color:var(--color-burgundy)]">
+                  Brașov
+                </div>
                 <div className="text-xs uppercase tracking-[0.28em] text-[color:var(--color-gold)] mt-1">
-                  Celebration
+                  Petrecerea
                 </div>
               </div>
             </div>
@@ -178,7 +181,7 @@ function Invitation() {
             </p>
 
             <p className="mt-4 text-xs uppercase tracking-[0.32em] text-[color:var(--color-gold)]">
-              Estimated driving time · {c.journey.estimatedDuration}
+              Timp estimat de condus · {c.journey.estimatedDuration}
             </p>
 
             <div className="mt-8">
@@ -191,9 +194,9 @@ function Invitation() {
                 )}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center justify-center rounded-sm border border-[color:var(--color-forest)] px-6 py-3 text-[11px] uppercase tracking-[0.32em] text-[color:var(--color-forest)] transition hover:bg-[color:var(--color-forest)] hover:text-[color:var(--color-ivory)]"
+                className="inline-flex items-center justify-center rounded-sm border border-[color:var(--color-olive)] px-6 py-3 text-[11px] uppercase tracking-[0.32em] text-[color:var(--color-olive)] transition hover:bg-[color:var(--color-olive)] hover:text-[color:var(--color-ivory)]"
               >
-                Open Directions in Google Maps
+                Deschide traseul în Google Maps
               </a>
             </div>
           </div>
@@ -205,7 +208,7 @@ function Invitation() {
         <section id="rsvp" className="px-6 py-20 sm:py-28">
           <div className="mx-auto max-w-2xl">
             <div className="text-center">
-              <SectionLabel>Répondez s'il vous plaît</SectionLabel>
+              <SectionLabel>Vă rugăm să răspundeți</SectionLabel>
               <SectionHeading>{c.rsvp.heading}</SectionHeading>
               <p className="mx-auto mt-6 max-w-lg text-base italic text-[color:var(--color-charcoal)]/85">
                 {c.rsvp.intro}
@@ -225,11 +228,11 @@ function Invitation() {
         <section className="px-6 py-20 sm:py-24 bg-[color:var(--color-parchment)]/25">
           <div className="mx-auto max-w-6xl">
             <div className="text-center">
-              <SectionLabel>Good to Know</SectionLabel>
-              <SectionHeading>Practical Information</SectionHeading>
+              <SectionLabel>Bine de știut</SectionLabel>
+              <SectionHeading>Informații practice</SectionHeading>
               <p className="mx-auto mt-4 max-w-xl text-sm italic text-[color:var(--color-charcoal)]/70">
                 {/* editable placeholder note */}
-                The details below are editable placeholders and will be filled in soon.
+                Detaliile de mai jos sunt provizorii și vor fi completate în curând.
               </p>
             </div>
 
@@ -258,7 +261,7 @@ function Invitation() {
             <div className="flex justify-center text-[color:var(--color-gold)]">
               <Ornament width={220} />
             </div>
-            <p className="mt-10 font-display text-2xl sm:text-3xl text-[color:var(--color-forest)] leading-relaxed">
+            <p className="mt-10 font-display text-2xl sm:text-3xl text-[color:var(--color-olive)] leading-relaxed">
               {c.closing.line}
             </p>
             <p className="mt-8 whitespace-pre-line italic text-[color:var(--color-burgundy)] text-lg">
@@ -280,7 +283,8 @@ function Invitation() {
         </section>
 
         <footer className="border-t border-[color:var(--color-gold)]/30 px-6 py-8 text-center text-[11px] uppercase tracking-[0.32em] text-[color:var(--color-charcoal)]/60">
-          Dan &amp; Petra · Cristian &amp; Brașov · {c.date.short}
+          {c.couple.firstName} &amp; {c.couple.partnerFirstName} · Cristian &amp; Brașov ·{" "}
+          {c.date.short}
         </footer>
       </main>
     </div>

@@ -4,10 +4,10 @@ import { weddingConfig } from "@/lib/wedding-config";
 type Status = "idle" | "loading" | "success" | "error";
 
 const inputCls =
-  "w-full rounded-sm border border-[color:var(--color-gold)]/50 bg-[color:var(--color-ivory)]/70 px-4 py-3 text-sm text-[color:var(--color-charcoal)] placeholder:text-[color:var(--color-charcoal)]/50 focus:border-[color:var(--color-forest)] focus:outline-none focus:ring-1 focus:ring-[color:var(--color-forest)]/40 transition";
+  "w-full rounded-sm border border-[color:var(--color-gold)]/50 bg-[color:var(--color-ivory)]/70 px-4 py-3 text-sm text-[color:var(--color-charcoal)] placeholder:text-[color:var(--color-charcoal)]/50 focus:border-[color:var(--color-olive)] focus:outline-none focus:ring-1 focus:ring-[color:var(--color-olive)]/40 transition";
 
 const labelCls =
-  "block text-[11px] uppercase tracking-[0.28em] text-[color:var(--color-forest)] mb-2";
+  "block text-[11px] uppercase tracking-[0.28em] text-[color:var(--color-olive)] mb-2";
 
 export function RsvpForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -38,19 +38,19 @@ export function RsvpForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      if (!res.ok) throw new Error(`Cererea a eșuat (${res.status})`);
       setStatus("success");
       form.reset();
     } catch (err) {
       setStatus("error");
-      setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
+      setErrorMsg(err instanceof Error ? err.message : "A apărut o eroare.");
     }
   }
 
   if (status === "success") {
     return (
       <div className="rounded-sm border border-[color:var(--color-gold)]/50 bg-[color:var(--color-ivory)]/70 p-10 text-center">
-        <p className="font-display text-2xl text-[color:var(--color-forest)]">Thank you</p>
+        <p className="font-display text-2xl text-[color:var(--color-olive)]">Mulțumim</p>
         <p className="mt-3 text-sm leading-relaxed text-[color:var(--color-charcoal)]/90">
           {weddingConfig.rsvp.success}
         </p>
@@ -69,32 +69,58 @@ export function RsvpForm() {
       </div>
 
       <div className="sm:col-span-2">
-        <label htmlFor="invitationToken" className={labelCls}>Invitation code</label>
-        <input id="invitationToken" name="invitationToken" type="text" className={inputCls} autoComplete="off" />
+        <label htmlFor="invitationToken" className={labelCls}>
+          Cod de invitație
+        </label>
+        <input
+          id="invitationToken"
+          name="invitationToken"
+          type="text"
+          className={inputCls}
+          autoComplete="off"
+        />
       </div>
 
       <div>
-        <label htmlFor="name" className={labelCls}>Full name</label>
-        <input id="name" name="name" type="text" required className={inputCls} autoComplete="name" />
+        <label htmlFor="name" className={labelCls}>
+          Nume complet
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          className={inputCls}
+          autoComplete="name"
+        />
       </div>
       <div>
-        <label htmlFor="email" className={labelCls}>Email address</label>
-        <input id="email" name="email" type="email" required className={inputCls} autoComplete="email" />
+        <label htmlFor="email" className={labelCls}>
+          Adresă de email
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          className={inputCls}
+          autoComplete="email"
+        />
       </div>
 
       <fieldset className="sm:col-span-2">
-        <legend className={labelCls}>Will you attend?</legend>
+        <legend className={labelCls}>Veți participa?</legend>
         <div className="flex flex-wrap gap-3">
           {[
-            { v: "yes", l: "Joyfully accepts" },
-            { v: "no", l: "Regretfully declines" },
+            { v: "yes", l: "Accept cu bucurie" },
+            { v: "no", l: "Din păcate, nu pot" },
           ].map((opt) => (
             <label
               key={opt.v}
               className={`cursor-pointer rounded-sm border px-4 py-3 text-sm transition ${
                 attending === (opt.v as "yes" | "no")
-                  ? "border-[color:var(--color-forest)] bg-[color:var(--color-forest)] text-[color:var(--color-ivory)]"
-                  : "border-[color:var(--color-gold)]/50 text-[color:var(--color-charcoal)] hover:border-[color:var(--color-forest)]"
+                  ? "border-[color:var(--color-olive)] bg-[color:var(--color-olive)] text-[color:var(--color-ivory)]"
+                  : "border-[color:var(--color-gold)]/50 text-[color:var(--color-charcoal)] hover:border-[color:var(--color-olive)]"
               }`}
             >
               <input
@@ -112,38 +138,69 @@ export function RsvpForm() {
       </fieldset>
 
       <div>
-        <label htmlFor="guestCount" className={labelCls}>Number of guests</label>
-        <input id="guestCount" name="guestCount" type="number" min={1} max={10} defaultValue={1} className={inputCls} />
+        <label htmlFor="guestCount" className={labelCls}>
+          Număr de invitați
+        </label>
+        <input
+          id="guestCount"
+          name="guestCount"
+          type="number"
+          min={1}
+          max={10}
+          defaultValue={1}
+          className={inputCls}
+        />
       </div>
       <div>
-        <label htmlFor="meal" className={labelCls}>Meal preference</label>
+        <label htmlFor="meal" className={labelCls}>
+          Preferință de meniu
+        </label>
         <select id="meal" name="meal" className={inputCls} defaultValue="">
-          <option value="" disabled>Please choose…</option>
-          <option value="regular">Regular</option>
+          <option value="" disabled>
+            Vă rugăm alegeți…
+          </option>
+          <option value="regular">Standard</option>
           <option value="vegetarian">Vegetarian</option>
           <option value="vegan">Vegan</option>
-          <option value="other">Other</option>
+          <option value="other">Altele</option>
         </select>
       </div>
 
       <div className="sm:col-span-2">
-        <label htmlFor="guestNames" className={labelCls}>Guest names</label>
-        <input id="guestNames" name="guestNames" type="text" className={inputCls} placeholder="Names of everyone in your party" />
+        <label htmlFor="guestNames" className={labelCls}>
+          Numele invitaților
+        </label>
+        <input
+          id="guestNames"
+          name="guestNames"
+          type="text"
+          className={inputCls}
+          placeholder="Numele tuturor persoanelor din grupul dumneavoastră"
+        />
       </div>
 
       <div className="sm:col-span-2">
-        <label htmlFor="dietaryRequirements" className={labelCls}>Dietary requirements or allergies</label>
-        <input id="dietaryRequirements" name="dietaryRequirements" type="text" className={inputCls} />
+        <label htmlFor="dietaryRequirements" className={labelCls}>
+          Restricții alimentare sau alergii
+        </label>
+        <input
+          id="dietaryRequirements"
+          name="dietaryRequirements"
+          type="text"
+          className={inputCls}
+        />
       </div>
 
       <div className="sm:col-span-2">
-        <label htmlFor="message" className={labelCls}>A message for Dan and Petra</label>
+        <label htmlFor="message" className={labelCls}>
+          Un mesaj pentru Dan și Petra
+        </label>
         <textarea id="message" name="message" rows={4} className={inputCls} />
       </div>
 
       {status === "error" ? (
         <p className="sm:col-span-2 text-sm text-[color:var(--color-burgundy)]">
-          {errorMsg ?? "Something went wrong. Please try again."}
+          {errorMsg ?? "A apărut o eroare. Vă rugăm încercați din nou."}
         </p>
       ) : null}
 
@@ -151,9 +208,9 @@ export function RsvpForm() {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="inline-flex min-w-56 items-center justify-center rounded-sm border border-[color:var(--color-forest)] bg-[color:var(--color-forest)] px-8 py-3 text-[11px] uppercase tracking-[0.36em] text-[color:var(--color-ivory)] transition hover:bg-[color:var(--color-burgundy)] hover:border-[color:var(--color-burgundy)] disabled:opacity-60"
+          className="inline-flex min-w-56 items-center justify-center rounded-sm border border-[color:var(--color-olive)] bg-[color:var(--color-olive)] px-8 py-3 text-[11px] uppercase tracking-[0.36em] text-[color:var(--color-ivory)] transition hover:bg-[color:var(--color-burgundy)] hover:border-[color:var(--color-burgundy)] disabled:opacity-60"
         >
-          {status === "loading" ? "Sending…" : "Send reply"}
+          {status === "loading" ? "Se trimite…" : "Trimite răspunsul"}
         </button>
       </div>
     </form>

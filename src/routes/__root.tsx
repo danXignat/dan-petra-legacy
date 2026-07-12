@@ -12,22 +12,25 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { weddingConfig } from "../lib/wedding-config";
+import { buildThemeCss } from "../lib/theme";
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[color:var(--color-ivory)] px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-7xl text-[color:var(--color-forest)]">404</h1>
-        <h2 className="mt-4 font-display text-xl text-[color:var(--color-burgundy)]">Page not found</h2>
+        <h1 className="font-display text-7xl text-[color:var(--color-olive)]">404</h1>
+        <h2 className="mt-4 font-display text-xl text-[color:var(--color-burgundy)]">
+          Pagină negăsită
+        </h2>
         <p className="mt-2 text-sm text-[color:var(--color-charcoal)]/80">
-          The page you're looking for doesn't exist.
+          Pagina pe care o căutați nu există.
         </p>
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-sm border border-[color:var(--color-forest)] bg-[color:var(--color-forest)] px-5 py-2 text-xs uppercase tracking-[0.32em] text-[color:var(--color-ivory)] hover:bg-[color:var(--color-burgundy)] hover:border-[color:var(--color-burgundy)]"
+            className="inline-flex items-center justify-center rounded-sm border border-[color:var(--color-olive)] bg-[color:var(--color-olive)] px-5 py-2 text-xs uppercase tracking-[0.32em] text-[color:var(--color-ivory)] hover:bg-[color:var(--color-burgundy)] hover:border-[color:var(--color-burgundy)]"
           >
-            Go home
+            Înapoi acasă
           </Link>
         </div>
       </div>
@@ -45,22 +48,27 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[color:var(--color-ivory)] px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-xl text-[color:var(--color-forest)]">This page didn't load</h1>
+        <h1 className="font-display text-xl text-[color:var(--color-olive)]">
+          Pagina nu s-a încărcat
+        </h1>
         <p className="mt-2 text-sm text-[color:var(--color-charcoal)]/80">
-          Something went wrong. You can try again or head home.
+          A apărut o eroare. Puteți încerca din nou sau reveni acasă.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
-            className="inline-flex items-center justify-center rounded-sm border border-[color:var(--color-forest)] bg-[color:var(--color-forest)] px-5 py-2 text-xs uppercase tracking-[0.32em] text-[color:var(--color-ivory)] hover:bg-[color:var(--color-burgundy)] hover:border-[color:var(--color-burgundy)]"
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
+            className="inline-flex items-center justify-center rounded-sm border border-[color:var(--color-olive)] bg-[color:var(--color-olive)] px-5 py-2 text-xs uppercase tracking-[0.32em] text-[color:var(--color-ivory)] hover:bg-[color:var(--color-burgundy)] hover:border-[color:var(--color-burgundy)]"
           >
-            Try again
+            Încearcă din nou
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-sm border border-[color:var(--color-gold)] px-5 py-2 text-xs uppercase tracking-[0.32em] text-[color:var(--color-forest)] hover:bg-[color:var(--color-gold)]/10"
+            className="inline-flex items-center justify-center rounded-sm border border-[color:var(--color-gold)] px-5 py-2 text-xs uppercase tracking-[0.32em] text-[color:var(--color-olive)] hover:bg-[color:var(--color-gold)]/10"
           >
-            Go home
+            Înapoi acasă
           </a>
         </div>
       </div>
@@ -80,11 +88,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: weddingConfig.seo.title },
       { property: "og:description", content: weddingConfig.seo.description },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Dan & Petra Wedding" },
+      { property: "og:site_name", content: "Nunta Dan & Petra" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: weddingConfig.seo.title },
       { name: "twitter:description", content: weddingConfig.seo.description },
-      { name: "theme-color", content: "#F5F0E6" },
+      { name: "theme-color", content: weddingConfig.theme.colors.ivory },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -93,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap",
       },
     ],
   }),
@@ -105,9 +113,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ro">
       <head>
         <HeadContent />
+        {/* Palette & fonts — injected from the single source of truth:
+            weddingConfig.theme (src/lib/wedding-config.ts). */}
+        <style id="wc-theme" dangerouslySetInnerHTML={{ __html: buildThemeCss() }} />
       </head>
       <body>
         {children}

@@ -6,7 +6,7 @@ interface MonogramProps {
   title?: string;
 }
 
-export function Monogram({ size = 96, className, title = "D and P monogram" }: MonogramProps) {
+export function Monogram({ size = 96, className, title = "Monograma D și P" }: MonogramProps) {
   const { left, right } = weddingConfig.couple.monogram;
   return (
     <svg
@@ -22,9 +22,12 @@ export function Monogram({ size = 96, className, title = "D and P monogram" }: M
       {/* Outer thin ring */}
       <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" strokeWidth="0.75" />
       <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" strokeWidth="0.4" />
-      {/* Small ornaments at cardinal points */}
+      {/* Cross finial + ornaments at cardinal points */}
+      <g stroke="currentColor" strokeWidth="1.1" strokeLinecap="round">
+        <line x1="60" y1="1" x2="60" y2="11" />
+        <line x1="55.5" y1="5" x2="64.5" y2="5" />
+      </g>
       <g fill="currentColor">
-        <circle cx="60" cy="4" r="1.2" />
         <circle cx="60" cy="116" r="1.2" />
         <circle cx="4" cy="60" r="1.2" />
         <circle cx="116" cy="60" r="1.2" />
@@ -42,7 +45,7 @@ export function Monogram({ size = 96, className, title = "D and P monogram" }: M
         x="42"
         y="76"
         textAnchor="middle"
-        fontFamily="'Cinzel', 'Cormorant Garamond', serif"
+        fontFamily="'Cinzel Decorative', 'Cinzel', serif"
         fontSize="42"
         fontWeight="500"
         fill="currentColor"
@@ -53,7 +56,7 @@ export function Monogram({ size = 96, className, title = "D and P monogram" }: M
         x="78"
         y="76"
         textAnchor="middle"
-        fontFamily="'Cinzel', 'Cormorant Garamond', serif"
+        fontFamily="'Cinzel Decorative', 'Cinzel', serif"
         fontSize="42"
         fontWeight="500"
         fill="currentColor"

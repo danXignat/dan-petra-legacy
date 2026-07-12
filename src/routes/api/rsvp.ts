@@ -21,7 +21,7 @@ export const Route = createFileRoute("/api/rsvp")({
         try {
           body = (await request.json()) as RsvpPayload;
         } catch {
-          return new Response(JSON.stringify({ error: "Invalid JSON" }), {
+          return new Response(JSON.stringify({ error: "JSON invalid" }), {
             status: 400,
             headers: { "Content-Type": "application/json" },
           });
@@ -37,7 +37,7 @@ export const Route = createFileRoute("/api/rsvp")({
 
         if (!body.name || !body.email) {
           return new Response(
-            JSON.stringify({ error: "Name and email are required." }),
+            JSON.stringify({ error: "Numele și adresa de email sunt obligatorii." }),
             { status: 400, headers: { "Content-Type": "application/json" } },
           );
         }

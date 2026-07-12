@@ -30,16 +30,16 @@ export function Countdown({ targetIso }: CountdownProps) {
 
   if (!state) {
     return (
-      <p className="font-display text-lg tracking-[0.25em] uppercase text-[color:var(--color-forest)]">
-        Today we celebrate
+      <p className="font-display text-lg tracking-[0.25em] uppercase text-[color:var(--color-olive)]">
+        Astăzi sărbătorim
       </p>
     );
   }
 
   const items = [
-    { v: state.days, l: "Days" },
-    { v: state.hours, l: "Hours" },
-    { v: state.minutes, l: "Minutes" },
+    { v: state.days, l: "Zile" },
+    { v: state.hours, l: "Ore" },
+    { v: state.minutes, l: "Minute" },
   ];
 
   return (
@@ -47,7 +47,7 @@ export function Countdown({ targetIso }: CountdownProps) {
       {items.map((it, i) => (
         <div key={it.l} className="flex items-center gap-6 sm:gap-10">
           <div className="text-center">
-            <div className="font-display text-3xl sm:text-4xl text-[color:var(--color-forest)] tabular-nums">
+            <div className="font-display text-3xl sm:text-4xl text-[color:var(--color-olive)] tabular-nums">
               {String(it.v).padStart(2, "0")}
             </div>
             <div className="mt-1 text-[10px] uppercase tracking-[0.32em] text-[color:var(--color-gold)]">
@@ -55,8 +55,8 @@ export function Countdown({ targetIso }: CountdownProps) {
             </div>
           </div>
           {i < items.length - 1 ? (
-            <span className="text-[color:var(--color-gold)]" aria-hidden="true">
-              ·
+            <span className="text-xs text-[color:var(--color-burgundy)]" aria-hidden="true">
+              ◆
             </span>
           ) : null}
         </div>
