@@ -41,6 +41,30 @@ function Invitation() {
       <main id="home">
         {/* ============ HERO ============ */}
         <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-6 pt-28 pb-16">
+          {/* Corner botanicals: whimsical vines with grapes & pomegranates */}
+          <VineBotanical
+            className="pointer-events-none absolute -left-6 top-24 text-[color:var(--color-gold)]/50 hidden sm:block"
+            width={180}
+            height={280}
+          />
+          <VineBotanical
+            className="pointer-events-none absolute -right-6 top-24 text-[color:var(--color-gold)]/50 hidden sm:block"
+            width={180}
+            height={280}
+            flip
+          />
+          <VineBotanical
+            className="pointer-events-none absolute -left-8 bottom-0 text-[color:var(--color-burgundy)]/30 hidden md:block"
+            width={160}
+            height={240}
+          />
+          <VineBotanical
+            className="pointer-events-none absolute -right-8 bottom-0 text-[color:var(--color-burgundy)]/30 hidden md:block"
+            width={160}
+            height={240}
+            flip
+          />
+
           {/* Arched frame with hero image */}
           <div className="pointer-events-none absolute inset-x-0 top-24 mx-auto hidden md:block">
             <div className="relative mx-auto h-[520px] w-[380px] opacity-25">
