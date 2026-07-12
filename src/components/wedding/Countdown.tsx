@@ -11,7 +11,8 @@ function diff(target: Date) {
   const days = Math.floor(ms / 86400000);
   const hours = Math.floor((ms % 86400000) / 3600000);
   const minutes = Math.floor((ms % 3600000) / 60000);
-  return { days, hours, minutes };
+  const seconds = Math.floor((ms % 60000) / 1000);
+  return { days, hours, minutes, seconds };
 }
 
 export function Countdown({ targetIso }: CountdownProps) {
@@ -22,7 +23,7 @@ export function Countdown({ targetIso }: CountdownProps) {
   useEffect(() => {
     setReady(true);
     setState(diff(target));
-    const id = setInterval(() => setState(diff(target)), 60_000);
+    const id = setInterval(() => setState(diff(target)), 1_000);
     return () => clearInterval(id);
   }, [targetIso]);
 
@@ -40,6 +41,7 @@ export function Countdown({ targetIso }: CountdownProps) {
     { v: state.days, l: "Zile" },
     { v: state.hours, l: "Ore" },
     { v: state.minutes, l: "Minute" },
+    { v: state.seconds, l: "Secunde" },
   ];
 
   return (
