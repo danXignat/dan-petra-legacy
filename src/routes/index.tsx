@@ -5,7 +5,7 @@ import { Ornament, Divider } from "@/components/wedding/Ornament";
 import { EventCard } from "@/components/wedding/EventCard";
 import { RsvpForm } from "@/components/wedding/RsvpForm";
 import { Countdown } from "@/components/wedding/Countdown";
-import { weddingConfig, mapsDirectionsUrl } from "@/lib/wedding-config";
+import { weddingConfig } from "@/lib/wedding-config";
 
 export const Route = createFileRoute("/")({
   component: Invitation,
@@ -127,79 +127,6 @@ function Invitation() {
             </div>
           </div>
         </section>
-
-        {/* ============ JOURNEY ============ */}
-        <section className="px-6 py-20 sm:py-24">
-          <div className="mx-auto max-w-4xl text-center">
-            <SectionLabel>Traseul</SectionLabel>
-            <SectionHeading>{c.journey.heading}</SectionHeading>
-
-            <div className="mt-14 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-4">
-              <div className="text-center">
-                <div className="font-display text-lg text-[color:var(--color-burgundy)]">
-                  Cristian
-                </div>
-                <div className="text-xs uppercase tracking-[0.28em] text-[color:var(--color-gold)] mt-1">
-                  Ceremonia
-                </div>
-              </div>
-
-              <svg
-                viewBox="0 0 240 40"
-                className="h-10 w-56 text-[color:var(--color-gold)]"
-                aria-hidden="true"
-              >
-                <path
-                  d="M4 20 Q60 4 120 20 T236 20"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="0.8"
-                  strokeDasharray="2 4"
-                />
-                <circle cx="4" cy="20" r="3" fill="currentColor" />
-                <circle cx="236" cy="20" r="3" fill="currentColor" />
-                <g transform="translate(120 12)" fill="currentColor">
-                  <path d="M0 0 l4 4 -4 4 -4 -4 z" />
-                </g>
-              </svg>
-
-              <div className="text-center">
-                <div className="font-display text-lg text-[color:var(--color-burgundy)]">
-                  Brașov
-                </div>
-                <div className="text-xs uppercase tracking-[0.28em] text-[color:var(--color-gold)] mt-1">
-                  Petrecerea
-                </div>
-              </div>
-            </div>
-
-            <p className="mx-auto mt-10 max-w-xl text-base italic text-[color:var(--color-charcoal)]/85">
-              {c.journey.body}
-            </p>
-
-            <p className="mt-4 text-xs uppercase tracking-[0.32em] text-[color:var(--color-gold)]">
-              Timp estimat de condus · {c.journey.estimatedDuration}
-            </p>
-
-            <div className="mt-8">
-              <a
-                href={mapsDirectionsUrl(
-                  c.ceremony.venue,
-                  [...c.ceremony.addressLines],
-                  c.celebration.venue,
-                  [...c.celebration.addressLines],
-                )}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="inline-flex items-center justify-center rounded-sm border border-[color:var(--color-olive)] px-6 py-3 text-[11px] uppercase tracking-[0.32em] text-[color:var(--color-olive)] transition hover:bg-[color:var(--color-olive)] hover:text-[color:var(--color-ivory)]"
-              >
-                Deschide traseul în Google Maps
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <Divider />
 
         {/* ============ RSVP ============ */}
         <section id="rsvp" className="px-6 py-20 sm:py-28">
