@@ -44,9 +44,7 @@ function Invitation() {
 
   return (
     <div className="min-h-screen">
-      <PageSideVines>
-        {null}
-      </PageSideVines>
+      <PageSideVines />
       <Nav />
       <main id="home" className="relative z-10">
         {/* ============ HERO ============ */}
