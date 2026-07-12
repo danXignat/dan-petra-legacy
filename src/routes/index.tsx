@@ -40,11 +40,15 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 function Invitation() {
   const c = weddingConfig;
+  useRevealOnScroll();
 
   return (
     <div className="min-h-screen">
+      <PageSideVines>
+        {null}
+      </PageSideVines>
       <Nav />
-      <main id="home">
+      <main id="home" className="relative z-10">
         {/* ============ HERO ============ */}
         <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-6 pt-28 pb-16">
           {/* Corner botanicals: whimsical vines with grapes & pomegranates */}
