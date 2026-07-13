@@ -206,10 +206,6 @@ function Invitation() {
           </div>
         </section>
 
-        <footer className="border-t border-[color:var(--color-gold)]/30 px-6 py-8 text-center text-[11px] uppercase tracking-[0.32em] text-[color:var(--color-charcoal)]/60">
-          {c.couple.firstName} &amp; {c.couple.partnerFirstName} · Cristian &amp; Brașov ·{" "}
-          {c.date.short}
-        </footer>
       </main>
     </div>
   );
