@@ -138,14 +138,14 @@ function RootComponent() {
         <img
           src="/bottom-left-corner-vines.svg"
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 left-0 z-20 w-[min(42vw,420px)] select-none opacity-90 [filter:saturate(6)_hue-rotate(-10deg)_brightness(0.45)_contrast(1.3)]"
+          className="pointer-events-none absolute bottom-6 left-0 z-20 w-[min(38vw,380px)] select-none opacity-90 [filter:saturate(6)_hue-rotate(-10deg)_brightness(0.45)_contrast(1.3)] sm:bottom-8"
           alt=""
         />
         {/* Top-right corner vine decoration */}
         <img
           src="/top-right-corner-vines.svg"
           aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-0 z-20 w-[min(42vw,420px)] select-none opacity-90 [filter:saturate(6)_hue-rotate(-10deg)_brightness(0.45)_contrast(1.3)]"
+          className="pointer-events-none absolute right-0 top-6 z-20 w-[min(38vw,380px)] select-none opacity-90 [filter:saturate(6)_hue-rotate(-10deg)_brightness(0.45)_contrast(1.3)] sm:top-8"
           alt=""
         />
         <Outlet />
