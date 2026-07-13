@@ -59,39 +59,43 @@ export function Nav() {
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true">
-            {open ? (
+          {open ? (
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
               <g stroke="currentColor" strokeWidth="1.2">
-                <line x1="2" y1="2" x2="18" y2="12" />
-                <line x1="18" y1="2" x2="2" y2="12" />
+                <line x1="2" y1="2" x2="14" y2="14" />
+                <line x1="14" y1="2" x2="2" y2="14" />
               </g>
-            ) : (
+            </svg>
+          ) : (
+            <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true">
               <g stroke="currentColor" strokeWidth="1.2">
                 <line x1="0" y1="2" x2="20" y2="2" />
                 <line x1="0" y1="7" x2="20" y2="7" />
                 <line x1="0" y1="12" x2="20" y2="12" />
               </g>
-            )}
-          </svg>
+            </svg>
+          )}
         </button>
       </nav>
-      {open ? (
-        <div className="md:hidden border-t border-[color:var(--color-gold)]/30 bg-[color:var(--color-ivory)]/95 backdrop-blur">
-          <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4 text-sm uppercase tracking-[0.28em] text-[color:var(--color-olive)]">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="block py-2 hover:text-[color:var(--color-burgundy)]"
-                >
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-500 border-[color:var(--color-gold)]/30 bg-[color:var(--color-ivory)]/95 backdrop-blur ${
+          open ? "max-h-96 opacity-100 border-t" : "max-h-0 opacity-0"
+        }`}
+      >
+        <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4 text-sm uppercase tracking-[0.28em] text-[color:var(--color-olive)]">
+          {links.map((l) => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block py-2 hover:text-[color:var(--color-burgundy)]"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 }

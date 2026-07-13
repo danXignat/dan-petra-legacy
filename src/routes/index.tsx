@@ -35,7 +35,7 @@ function Invitation() {
       <Nav />
       <main id="home">
         {/* ============ HERO ============ */}
-        <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-6 pt-28 pb-16">
+        <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-8 sm:px-6 pt-28 pb-16">
           <div className="relative z-10 mx-auto max-w-3xl text-center reveal">
             <div className="flex justify-center text-[color:var(--color-gold)]">
               <Monogram size={110} />
@@ -43,7 +43,7 @@ function Invitation() {
 
             <SectionLabel>{c.hero.kicker}</SectionLabel>
 
-            <h1 className="mt-6 font-decorative text-5xl leading-[1.05] sm:text-6xl md:text-7xl text-[color:var(--color-olive)]">
+            <h1 className="mt-6 font-decorative text-[2.4rem] leading-[1.05] sm:text-6xl md:text-7xl text-[color:var(--color-olive)]">
               <span className="text-[color:var(--color-burgundy)]">{c.couple.firstName}</span>
               <span className="mx-3 text-[color:var(--color-gold)]">&amp;</span>
               <span className="text-[color:var(--color-burgundy)]">
