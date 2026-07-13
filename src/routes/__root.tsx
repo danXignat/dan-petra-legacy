@@ -138,14 +138,14 @@ function RootComponent() {
         <img
           src="/bottom-left-corner-vines.svg"
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-6 left-0 z-20 w-[min(30vw,320px)] select-none opacity-90 [filter:saturate(6)_hue-rotate(-10deg)_brightness(0.45)_contrast(1.3)] sm:bottom-8 sm:w-[min(34vw,380px)]"
+          className="pointer-events-none absolute bottom-[0.4rem] left-[0.4rem] z-20 w-[min(44vw,360px)] select-none opacity-90 [filter:saturate(6)_hue-rotate(-10deg)_brightness(0.45)_contrast(1.3)] sm:bottom-[0.7rem] sm:left-[0.7rem] sm:w-[min(52vw,560px)]"
           alt=""
         />
         {/* Top-right corner vine decoration */}
         <img
           src="/top-right-corner-vines.svg"
           aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-6 z-20 w-[min(30vw,320px)] select-none opacity-90 [filter:saturate(6)_hue-rotate(-10deg)_brightness(0.45)_contrast(1.3)] sm:top-8 sm:w-[min(34vw,380px)]"
+          className="pointer-events-none absolute right-[0.4rem] top-[0.4rem] z-20 w-[min(44vw,360px)] select-none opacity-90 [filter:saturate(6)_hue-rotate(-10deg)_brightness(0.45)_contrast(1.3)] sm:right-[0.7rem] sm:top-[0.7rem] sm:w-[min(52vw,560px)]"
           alt=""
         />
         <Outlet />
