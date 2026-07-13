@@ -19,22 +19,45 @@ export function Monogram({ size = 96, className, title = "Monograma D și P" }: 
       aria-label={title}
     >
       <title>{title}</title>
-      {/* Outer thin ring */}
-      <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" strokeWidth="0.75" />
-      <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" strokeWidth="0.4" />
-      {/* Cross finial + ornaments at cardinal points */}
-      <g stroke="currentColor" strokeWidth="1.1" strokeLinecap="round">
-        <line x1="60" y1="1" x2="60" y2="11" />
-        <line x1="55.5" y1="5" x2="64.5" y2="5" />
-      </g>
-      <g fill="currentColor">
-        <circle cx="60" cy="116" r="1.2" />
-        <circle cx="4" cy="60" r="1.2" />
-        <circle cx="116" cy="60" r="1.2" />
-      </g>
+      {/* Heraldic shield frame around the sword and initials */}
+      <svg
+        x="4"
+        y="2"
+        width="112"
+        height="112"
+        viewBox="0 0 1400 1400"
+        preserveAspectRatio="xMidYMid meet"
+        overflow="visible"
+      >
+        <path
+          transform="translate(700,33)"
+          fill="none"
+          stroke="var(--color-olive)"
+          strokeWidth="14"
+          d="m0 0 5 1 24 16 12 9 18 13 18 12 13 10 11 8 15 10 11 8 41 27 20 12 17 10 38 18 19 10 37 15 36 12 13 5 39 9 36 8 37 5 22 2 34 2 33 3 6 2 2 35 2 44 1 61v34l-1 49-4 61-5 43-5 38-7 42-9 44-15 60-11 36-15 42-10 26-18 40-9 19-10 19-17 32-8 14-12 19-11 17-24 34-12 16-10 13-11 13-9 11-11 12-7 8-7 7-7 8-43 43-8 7-14 13-8 7-10 9-14 11-12 10-36 27-14 10-23 15-19 12-27 16-27 15-23 12-3 2-5-1-32-15-18-8-28-16-17-11-16-10-20-13-19-13-16-11-19-14-18-14-12-9-13-10-14-13-8-7-13-12-8-7-24-24-8-7-14-15-9-10-9-11-10-11-7-8-10-12-13-18-15-20-16-23-12-18-13-21-8-13-15-25-8-16-14-30-14-31-12-30-8-23-12-36-10-35-11-41-9-48-10-64-4-46-3-51-2-47v-67l3-69 2-52 2-3h23l47-3 29-2 31-4 45-9 28-7 26-8 39-14 29-13 18-8 16-8 20-11 23-13 21-13 22-13 33-22 18-13 16-11 13-10 28-20 15-11 11-8z"
+        />
+      </svg>
+      {/* Inner (double) shield line */}
+      <svg
+        x="13"
+        y="11"
+        width="94"
+        height="94"
+        viewBox="0 0 1400 1400"
+        preserveAspectRatio="xMidYMid meet"
+        overflow="visible"
+      >
+        <path
+          transform="translate(700,33)"
+          fill="none"
+          stroke="var(--color-olive)"
+          strokeWidth="7"
+          d="m0 0 5 1 24 16 12 9 18 13 18 12 13 10 11 8 15 10 11 8 41 27 20 12 17 10 38 18 19 10 37 15 36 12 13 5 39 9 36 8 37 5 22 2 34 2 33 3 6 2 2 35 2 44 1 61v34l-1 49-4 61-5 43-5 38-7 42-9 44-15 60-11 36-15 42-10 26-18 40-9 19-10 19-17 32-8 14-12 19-11 17-24 34-12 16-10 13-11 13-9 11-11 12-7 8-7 7-7 8-43 43-8 7-14 13-8 7-10 9-14 11-12 10-36 27-14 10-23 15-19 12-27 16-27 15-23 12-3 2-5-1-32-15-18-8-28-16-17-11-16-10-20-13-19-13-16-11-19-14-18-14-12-9-13-10-14-13-8-7-13-12-8-7-24-24-8-7-14-15-9-10-9-11-10-11-7-8-10-12-13-18-15-20-16-23-12-18-13-21-8-13-15-25-8-16-14-30-14-31-12-30-8-23-12-36-10-35-11-41-9-48-10-64-4-46-3-51-2-47v-67l3-69 2-52 2-3h23l47-3 29-2 31-4 45-9 28-7 26-8 39-14 29-13 18-8 16-8 20-11 23-13 21-13 22-13 33-22 18-13 16-11 13-10 28-20 15-11 11-8z"
+        />
+      </svg>
       {/* Gothic arch behind letters */}
       <path
-        d="M30 82 L30 58 Q60 28 90 58 L90 82"
+        d="M24 50 Q60 18 96 50"
         fill="none"
         stroke="currentColor"
         strokeWidth="0.5"
@@ -45,6 +68,7 @@ export function Monogram({ size = 96, className, title = "Monograma D și P" }: 
         x="42"
         y="76"
         textAnchor="middle"
+        transform="translate(42 0) scale(0.88 1) translate(-42 0)"
         fontFamily="'Cinzel Decorative', 'Cinzel', serif"
         fontSize="42"
         fontWeight="500"
