@@ -24,7 +24,7 @@ export function Nav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-all duration-500 ${
-        scrolled
+        scrolled || open
           ? "backdrop-blur-md bg-[color:var(--color-ivory)]/85 border-b border-[color:var(--color-gold)]/30"
           : "bg-transparent"
       }`}
