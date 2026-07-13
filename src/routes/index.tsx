@@ -199,10 +199,6 @@ function Invitation() {
             <p className="mt-6 font-display tracking-[0.4em] text-[color:var(--color-gold)] text-sm">
               {c.date.short}
             </p>
-
-            <div className="mt-10 flex justify-center text-[color:var(--color-gold)]">
-              <Ornament width={220} />
-            </div>
           </div>
         </section>
 
