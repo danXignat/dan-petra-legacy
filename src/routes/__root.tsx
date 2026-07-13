@@ -145,7 +145,7 @@ function RootComponent() {
         <img
           src="/top-right-corner-vines.svg"
           aria-hidden="true"
-          className="pointer-events-none absolute right-[0.4rem] top-[0.4rem] z-20 w-[min(44vw,360px)] select-none opacity-90 [filter:saturate(6)_hue-rotate(-10deg)_brightness(0.45)_contrast(1.3)] sm:right-[0.7rem] sm:top-[0.7rem] sm:w-[min(52vw,560px)]"
+          className="pointer-events-none absolute right-[0.4rem] top-[1rem] z-20 w-[min(44vw,360px)] select-none opacity-90 [filter:saturate(6)_hue-rotate(-10deg)_brightness(0.45)_contrast(1.3)] sm:right-[0.7rem] sm:top-[1.4rem] sm:w-[min(52vw,560px)]"
           alt=""
         />
         <Outlet />
