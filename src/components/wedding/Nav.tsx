@@ -36,16 +36,16 @@ export function Nav() {
           aria-label="Acasă"
         >
           <Monogram size={36} />
-          <span className="hidden font-display text-sm uppercase tracking-[0.3em] sm:inline">
+          <span className="hidden font-display text-sm font-semibold uppercase tracking-[0.3em] sm:inline">
             {weddingConfig.couple.firstName} &amp; {weddingConfig.couple.partnerFirstName}
           </span>
         </a>
-        <ul className="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.28em] text-[color:var(--color-olive)]">
+        <ul className="hidden md:flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.28em] text-[color:var(--color-olive)]">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="hover:text-[color:var(--color-burgundy)] transition-colors"
+                className="px-3 py-1.5 rounded-sm transition-colors duration-300 hover:text-[color:var(--color-burgundy)]"
               >
                 {l.label}
               </a>
@@ -54,7 +54,7 @@ export function Nav() {
         </ul>
         <button
           type="button"
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center text-[color:var(--color-olive)]"
+          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-sm text-[color:var(--color-olive)]"
           aria-label={open ? "Închide meniul" : "Deschide meniul"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -82,7 +82,7 @@ export function Nav() {
           open ? "max-h-96 opacity-100 border-t" : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4 text-sm uppercase tracking-[0.28em] text-[color:var(--color-olive)]">
+        <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4 text-sm font-semibold uppercase tracking-[0.28em] text-[color:var(--color-olive)]">
           {links.map((l) => (
             <li key={l.href}>
               <a
