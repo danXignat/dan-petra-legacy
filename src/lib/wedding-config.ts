@@ -55,7 +55,7 @@ export const weddingConfig = {
     title: "Ceremonia",
     time: "14:30",
     venue: "Biserica Fortificată Cristian",
-    addressLines: ["Piața Libertății 10", "Cristian 507055, Județul Brașov", "România"],
+    addressLines: ["Piața Libertății 10", "Cristian, Județul Brașov", "România"],
     description:
       "Vă invităm să ne fiți alături la ceremonia noastră de nuntă, între zidurile istorice ale Bisericii Fortificate din Cristian.",
     // Calendar
