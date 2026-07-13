@@ -68,7 +68,7 @@ function Invitation() {
                 href="#rsvp"
                 className="inline-flex min-w-52 items-center justify-center rounded-sm border border-[color:var(--color-olive)] bg-[color:var(--color-olive)] px-8 py-3 text-[11px] uppercase tracking-[0.4em] text-[color:var(--color-ivory)] transition hover:bg-[color:var(--color-burgundy)] hover:border-[color:var(--color-burgundy)]"
               >
-                RSVP
+                Confirmă prezența
               </a>
               <a
                 href="#schedule"
