@@ -35,7 +35,7 @@ function Invitation() {
       <Nav />
       <main id="home">
         {/* ============ HERO ============ */}
-        <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-8 sm:px-6 pt-28 pb-16">
+        <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-10 sm:px-6 pt-28 pb-16">
           <div className="relative z-10 mx-auto max-w-3xl text-center reveal">
             <div className="flex justify-center text-[color:var(--color-gold)]">
               <Monogram size={110} />
@@ -59,7 +59,7 @@ function Invitation() {
               <span className="h-px w-16 bg-current" />
             </div>
 
-            <p className="mx-auto mt-8 max-w-xl text-base sm:text-lg italic text-[color:var(--color-charcoal)]/85">
+            <p className="mx-auto mt-8 max-w-xl text-[15px] leading-[1.8] sm:text-lg italic text-[color:var(--color-charcoal)]/85">
               {c.hero.invitation}
             </p>
 
@@ -83,7 +83,7 @@ function Invitation() {
             </div>
 
             <div className="mt-14 mx-auto max-w-xl">
-              <p className="italic text-base sm:text-lg leading-[1.85] text-[color:var(--color-charcoal)]/85">
+              <p className="italic text-[15px] sm:text-lg leading-[1.85] text-[color:var(--color-charcoal)]/85">
                 „Mai bine doi decât unul, căci au o răsplată bună pentru osteneala
                 lor... Și funia împletită în trei nu se rupe ușor."
               </p>
