@@ -192,6 +192,10 @@ function Invitation() {
               {c.closing.signoff}
             </p>
 
+            <div className="mt-12 flex justify-center text-[color:var(--color-gold)]">
+              <Monogram size={80} />
+            </div>
+
             <p className="mt-6 font-display tracking-[0.4em] text-[color:var(--color-gold)] text-sm">
               {c.date.short}
             </p>
