@@ -45,14 +45,14 @@ export function Countdown({ targetIso }: CountdownProps) {
   ];
 
   return (
-    <div className="flex items-center justify-center gap-6 sm:gap-10">
+    <div className="flex items-center justify-center gap-3 sm:gap-10">
       {items.map((it, i) => (
-        <div key={it.l} className="flex items-center gap-6 sm:gap-10">
+        <div key={it.l} className="flex items-center gap-3 sm:gap-10">
           <div className="text-center">
-            <div className="font-display text-3xl sm:text-4xl text-[color:var(--color-olive)] tabular-nums">
+            <div className="font-display text-2xl sm:text-4xl text-[color:var(--color-olive)] tabular-nums">
               {String(it.v).padStart(2, "0")}
             </div>
-            <div className="mt-1 text-[10px] uppercase tracking-[0.32em] text-[color:var(--color-gold)]">
+            <div className="mt-1 text-[10px] uppercase tracking-[0.18em] sm:tracking-[0.32em] text-[color:var(--color-gold)]">
               {it.l}
             </div>
           </div>

@@ -35,7 +35,7 @@ function Invitation() {
       <Nav />
       <main id="home">
         {/* ============ HERO ============ */}
-        <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-10 sm:px-6 pt-28 pb-16">
+        <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-8 sm:px-6 pt-28 pb-16">
           <div className="relative z-10 mx-auto max-w-3xl text-center reveal">
             <div className="flex justify-center text-[color:var(--color-gold)]">
               <Monogram size={110} />
@@ -51,12 +51,12 @@ function Invitation() {
               </span>
             </h1>
 
-            <div className="mt-8 flex items-center justify-center gap-4 text-[color:var(--color-gold)]">
-              <span className="h-px w-16 bg-current" />
-              <span className="font-display text-sm sm:text-base uppercase tracking-[0.42em]">
+            <div className="mt-8 flex items-center justify-center gap-3 sm:gap-4 text-[color:var(--color-gold)]">
+              <span className="h-px w-8 sm:w-16 bg-current" />
+              <span className="font-display text-sm sm:text-base uppercase tracking-[0.25em] sm:tracking-[0.42em]">
                 {c.date.display}
               </span>
-              <span className="h-px w-16 bg-current" />
+              <span className="h-px w-8 sm:w-16 bg-current" />
             </div>
 
             <p className="mx-auto mt-8 max-w-xl text-[15px] leading-[1.8] sm:text-lg italic text-[color:var(--color-charcoal)]/85">
@@ -84,8 +84,8 @@ function Invitation() {
 
             <div className="mt-14 mx-auto max-w-xl">
               <p className="italic text-[15px] sm:text-lg leading-[1.85] text-[color:var(--color-charcoal)]/85">
-                „Mai bine doi decât unul, căci au o răsplată bună pentru osteneala
-                lor... Și funia împletită în trei nu se rupe ușor."
+                „Mai bine doi decât unul, căci au o răsplată bună pentru osteneala lor... Și funia
+                împletită în trei nu se rupe ușor."
               </p>
               <p className="mt-3 text-[11px] uppercase tracking-[0.38em] text-[color:var(--color-gold)]">
                 Eclesiastul 4:9–12
@@ -201,7 +201,6 @@ function Invitation() {
             </p>
           </div>
         </section>
-
       </main>
     </div>
   );
